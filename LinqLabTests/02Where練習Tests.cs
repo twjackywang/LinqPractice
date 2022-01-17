@@ -122,5 +122,41 @@ namespace LinqLab.Tests
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod()]
+        public void SumOfPriceOfJoeyShouldBe11090()
+        {
+            var expected = 11090;
+            var actual = new WhereLab().SumOfPriceOfOneUser("joey");
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void SampleFrom201603()
+        {
+            var expected = new List<Sample>
+            {
+                new Sample{Id = 1,UserName = "demo",CreateTime = new DateTime(2016,1,20),Price = 800,Item = new List<int> {97, 92, 81, 60}},
+                new Sample{Id = 10,UserName = "maduka",CreateTime = new DateTime(2016,1,20),Price = 9572,Item = new List<int> {99, 82, 81, 79}},
+            }.ToExpectedObject();
+            var actual = new WhereLab().SampleFromYearMonth(DateTime.Parse("2016/01"));
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void SampleFrom20160219To20160320()
+        {
+            var expected = 3;
+            var actual = new WhereLab().NumberOfSampleWithIn30Days(DateTime.Parse("2016/03/20"));
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void PeopleHaveItem91ShouldBe2()
+        {
+            var expected = 2;
+            var actual = new WhereLab().NumberOfPeopleHaveItem(91);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

@@ -55,5 +55,30 @@ namespace LinqLab
             var result = true;
             return result;
         }
+
+
+        public int SumOfPriceOfOneUser(string username)
+        {
+            var result = 0;
+            return result;
+        }
+
+        public List<Sample> SampleFromYearMonth(DateTime dateTime)
+        {
+            var result = new List<Sample>();
+            return result;
+        }
+
+        public int NumberOfSampleWithIn30Days(DateTime dateTime)
+        {
+            var result = 0;
+            return result;
+        }
+
+        public int NumberOfPeopleHaveItem(int itemId)
+        {
+            var result = 0;
+            return result;
+        }
     }
 }
